@@ -1,0 +1,19 @@
+{
+  "name": "readme-file",
+  "version": "1.0.0",
+  "description": "package for creating the read me generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjunkhakh/Creating-A-README-File-By-Arjun.git"
+  },
+  "author": "arjun khakh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjunkhakh/Creating-A-README-File-By-Arjun/issues"
+  },
+  "homepage": "https://github.com/arjunkhakh/Creating-A-README-File-By-Arjun#readme"
+}
