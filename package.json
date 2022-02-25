@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/arjunkhakh/Creating-A-README-File-By-Arjun/issues"
   },
-  "homepage": "https://github.com/arjunkhakh/Creating-A-README-File-By-Arjun#readme"
+  "homepage": "https://github.com/arjunkhakh/Creating-A-README-File-By-Arjun#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.0"
+  }
 }
