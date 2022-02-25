@@ -46,6 +46,16 @@ const inq = require("inquirer")
             message: "How can developers test your application?",
             name: "test",
         },
+        {
+            type: "input",
+            message: "What is your github profile?",
+            name: "github",
+        },
+        {
+            type: "input",
+            message: "What is your email?",
+            name: "email",
+        },
       ])
 .then((response => {
 
@@ -82,9 +92,15 @@ ${response.contribution}
 
 
 ## Tests
-${response.test}`;
+${response.test}
 
-fs.writeFile("TestREADME3.md", data, function (err) {
+## Questions?
+You can check out my user profile on Github: ${"https://github.com/" + response.github}.
+
+Or you can email me: ${response.email}.
+`;
+
+fs.writeFile("TestREADME5.md", data, function (err) {
     if (err) throw err;
     console.log("Saved!");
   });
