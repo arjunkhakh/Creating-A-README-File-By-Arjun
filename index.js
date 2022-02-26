@@ -1,11 +1,12 @@
 // TODO: Include packages needed for this application
 const fs = require("fs")
-const inq = require("inquirer")
+const inq = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
+const gen = require("./utils/generateMarkdown")
 
 // TODO: Create an array of questions for user input
 
-    inq
-    .prompt([
+const questions = [
         {
           type: "input",
           message: "What is the title of your README File?",
@@ -51,79 +52,24 @@ const inq = require("inquirer")
             message: "What is your email?",
             name: "email",
         },
-      ])
-.then((response => {
+      ]
 
-// const data = `# ${response.title}
-
-// ## Table of Contents
-
-// 1. Description 
-// 2. Installation
-// 3. Usage 
-// 4. License
-// 5. Contribution 
-// 6. Tests 
-
-
-// ## Description
-// ${response.description}
-
-
-
-
-const data = `# ${ response.title }
-
-## Table of Contents
-
-1. [Description](#description)
-2. [Contribution](#how-to-contribute) 
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [License](#license)
-6. [Tests](#tests)
-7. [Questions](#questions)
-
-## Description
-${ response.description }
-
-## How to Contribute
-${ response.contribution }
-
-## Installation
-${ response.installation }
-
-## Usage
-${ response.usage }
-
-## License
-${ response.license }
-
-## Tests
-${ response.test }
-
-## Questions
-You can check out my user profile on Github: ${ "https://github.com/" + response.github }.
-
-Or you can email me: ${ response.email }.
-`;
-
-fs.writeFile("TestREADME7.md", data, function (err) {
-    if (err) throw err;
-    console.log("Saved!");
-  });
-}));
 
 // TODO: Create a function to write README file
-function writeToFile() {
-    // fs.writeFile("TestREADME.md", data, function (err) {
-    //     if (err) throw err;
-    //     console.log("Saved!");
-    //   });
+function writeToFile(filename, data) {
+    fs.writeFile(filename, generateMarkdown(data), function (err) {
+        if (err) throw err;
+        console.log("Saved!");
+      });
 }
 
 // TODO: Create a function to initialize app
-// function init() {}
+function init() {
+  inq.prompt(questions).then((answers) => {
+    writeToFile("TestReadME.md", answers);
+  }
+  )
+}
 
 // // Function call to initialize app
-// init();
+init();
