@@ -21,6 +21,6 @@
 
   
   ## Questions
-  You can check out my user profile on Github: https://github.com/arjunkhakh Text.
+  You can check out my user profile on Github: https://github.com/arjunkhakh.
   
  
