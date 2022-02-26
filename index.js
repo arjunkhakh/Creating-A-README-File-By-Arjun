@@ -95,13 +95,15 @@ function writeToFile(filename, data) {
     fs.writeFile(filename, generateMarkdown(data), function (err) {
         if (err) throw err;
         console.log("Saved!");
-      });
+      })
+
+      ;
 }
 
 // TODO: Create a function to initialize app
 function init() {
   inq.prompt(questions).then((answers) => {
-    writeToFile("TestReadME14.md", answers);
+    writeToFile("TheReadME.md", answers);
   }
   )
 }
