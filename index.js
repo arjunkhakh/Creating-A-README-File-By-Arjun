@@ -18,11 +18,6 @@ const inq = require("inquirer")
         },
         {
           type: "input",
-          message: "What will be in your Table of Contents",
-          name: "contents",
-        },
-        {
-          type: "input",
           message: "How do we install your application?",
           name: "installation",
         },
@@ -59,48 +54,61 @@ const inq = require("inquirer")
       ])
 .then((response => {
 
-const data = `# ${response.title}
+// const data = `# ${response.title}
+
+// ## Table of Contents
+
+// 1. Description 
+// 2. Installation
+// 3. Usage 
+// 4. License
+// 5. Contribution 
+// 6. Tests 
+
+
+// ## Description
+// ${response.description}
+
+
+
+
+const data = `# ${ response.title }
 
 ## Table of Contents
 
-1. Description 
-2. Installation
-3. Usage 
-4. License
-5. Contribution 
-6. Tests 
-
+1. [Description](#description)
+2. [Contribution](#how-to-contribute) 
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [License](#license)
+6. [Tests](#tests)
+7. [Questions](#questions)
 
 ## Description
-${response.description}
-
-
-## Installation
-${response.installation}
-
-
-## Usage
-${response.usage}
-
-
-## License
-${response.license}
-
+${ response.description }
 
 ## How to Contribute
-${response.contribution}
+${ response.contribution }
 
+## Installation
+${ response.installation }
+
+## Usage
+${ response.usage }
+
+## License
+${ response.license }
 
 ## Tests
-${response.test}
+${ response.test }
 
-## Questions?
-You can check out my user profile on Github: ${"https://github.com/" + response.github}.
+## Questions
+You can check out my user profile on Github: ${ "https://github.com/" + response.github }.
 
-Or you can email me: ${response.email}.
+Or you can email me: ${ response.email }.
 `;
 
-fs.writeFile("TestREADME5.md", data, function (err) {
+fs.writeFile("TestREADME7.md", data, function (err) {
     if (err) throw err;
     console.log("Saved!");
   });
